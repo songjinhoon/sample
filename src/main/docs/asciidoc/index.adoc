@@ -1,0 +1,120 @@
+= REST API Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:operation-curl-request-title: Example request
+:operation-http-response-title: Example response
+
+[[overview]]
+= 개요
+API 관리 문서 입니다.
+
+[[overview-http-verbs]]
+== HTTP 동사
+
+본 REST API에서 사용하는 HTTP 동사(verbs)는 가능한한 표준 HTTP와 REST 규약을 따릅니다.
+
+|===
+| 동사 | 용례
+
+| `GET`
+| 리소스를 가져올 때 사용
+
+| `POST`
+| 새 리소스를 만들 때 사용
+
+| `PUT`
+| 기존 리소스를 수정할 때 사용
+
+| `PATCH`
+| 기존 리소스의 일부를 수정할 때 사용
+
+| `DELETE`
+| 기존 리소스를 삭제할 떄 사용
+|===
+
+[[overview-http-status-codes]]
+== HTTP 상태 코드
+
+본 REST API에서 사용하는 HTTP 상태 코드는 가능한한 표준 HTTP와 REST 규약을 따릅니다.
+
+|===
+| 상태 코드 | 용례
+
+| `200 OK`
+| 요청을 성공적으로 처리함
+
+| `201 Created`
+| 새 리소스를 성공적으로 생성함. 응답의 `Location` 헤더에 해당 리소스의 URI가 담겨있다.
+
+| `204 No Content`
+| 기존 리소스를 성공적으로 수정함.
+
+| `400 Bad Request`
+| 잘못된 요청을 보낸 경우. 응답 본문에 더 오류에 대한 정보가 담겨있다.
+
+| `404 Not Found`
+| 요청한 리소스가 없음.(리소스가 없거나 수정/삭제에 해당하는 데이터가 존재하지 않을 경우)
+|===
+
+[[resources-employee]]
+== Employee
+
+직원 데이터를 조회하거나 관리할 때 사용한다.
+
+[[resouces-find-employee]]
+== 직원 단건 조회
+
+`GET` 요청을 사용하여 직원을 조회한다.
+
+operation::find-employee[snippets='curl-request,http-response']
+
+[[resources-query-employee]]
+== 직원 쿼리
+
+`GET` 요청을 사용하여 직원 데이터를 쿼리한다.
+
+operation::query-employee[snippets='curl-request,http-response']
+
+[[resources-find-employee-with-department]]
+== 직원/부서 조회
+
+`GET` 요청을 사용하여 직원과 소속 부서정보를 조회한다.
+
+operation::find-employee-with-department[snippets='curl-request,http-response']
+
+[[resources-update-employee-salary]]
+== 특정 부서에 속한 직원 급여 인상
+
+`PUT` 요청을 사용하여 특정 부서에 속한 직원의 급여를 인상한다.
+
+operation::update-employee-salary[snippets='curl-request,request-fields,http-response']
+
+[[resources-department]]
+== Department
+
+부서 데이터를 조회하거나 관리할 때 사용한다.
+
+[[resouces-find-department]]
+== 부서 조회
+
+`GET` 요청을 사용하여 부서를 조회한다.
+
+operation::find-department[snippets='curl-request,http-response']
+
+[[resouces-find-department-with-manager]]
+== 부서/매니저 조회
+
+`GET` 요청을 사용하여 부서/매니저를 조회한다.
+
+operation::find-department-with-manager[snippets='curl-request,http-response']
+
+[[resouces-find-department-all]]
+== 부서 목록 조회
+
+`GET` 요청을 사용하여 부서목록을 조회한다.
+
+operation::find-department-all[snippets='curl-request,http-response']
