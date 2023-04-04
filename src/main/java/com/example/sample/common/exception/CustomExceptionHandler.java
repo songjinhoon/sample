@@ -27,4 +27,13 @@ public class CustomExceptionHandler {
         return ResponseEntity.internalServerError().body(e.getMessage());
     }
 
+    @ExceptionHandler(LinkException.class)
+    public ResponseEntity<?> linkException(Exception e) {
+        e.printStackTrace();
+
+        log.error(e.getMessage());
+
+        return ResponseEntity.internalServerError().body(e.getMessage());
+    }
+
 }

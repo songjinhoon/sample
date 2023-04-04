@@ -1,4 +1,4 @@
-package com.example.sample.employee.ui;
+package com.example.sample.employee.controller;
 
 import com.example.sample.department.domain.entity.Department;
 import com.example.sample.employee.domain.entity.Employee;

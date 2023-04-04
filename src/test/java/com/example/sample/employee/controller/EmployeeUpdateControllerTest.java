@@ -1,4 +1,4 @@
-package com.example.sample.employee.ui;
+package com.example.sample.employee.controller;
 
 import com.example.sample.common.BaseTest;
 import com.example.sample.employee.command.dto.SalaryUpdateDto;

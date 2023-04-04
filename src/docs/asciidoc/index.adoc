@@ -118,3 +118,15 @@ operation::find-department-with-manager[snippets='curl-request,http-response']
 `GET` 요청을 사용하여 부서목록을 조회한다.
 
 operation::find-department-all[snippets='curl-request,http-response']
+
+[[resources-weather]]
+== Weather
+
+기상 데이터를 조회할 때 사용한다.
+
+[[resources-find-weahter]]
+== 초단기실황 조회
+
+`GET` 요청을 사용하여 초단기실황을 조회한다.
+
+operation::find-weather[snippets='curl-request,request-fields,http-response']

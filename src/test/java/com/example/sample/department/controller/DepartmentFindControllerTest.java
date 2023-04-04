@@ -1,4 +1,4 @@
-package com.example.sample.department.ui;
+package com.example.sample.department.controller;
 
 import com.example.sample.common.BaseTest;
 import org.junit.jupiter.api.DisplayName;
