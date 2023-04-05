@@ -20,7 +20,8 @@ public class WeatherValidator {
                 return errors.hasErrors();
             }
 
-            if (weatherQueryDto.getLocalDateTime().isBefore(now.minusDays(1))) {
+            LocalDateTime check = LocalDateTime.of(weatherQueryDto.getBaseDate(), LocalTime.of(weatherQueryDto.getBaseTime(), 0));
+            if (check.isBefore(now.minusDays(1))) {
                 errors.rejectValue("baseTime", "wrongValues", "하루 전 시간 까지만 조회가 가능합니다.");
                 return errors.hasErrors();
             }

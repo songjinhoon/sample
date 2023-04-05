@@ -23,7 +23,7 @@ public class WeatherController {
 
 
     @GetMapping("/short-term-forecast")
-    public ResponseEntity<?> find(@RequestBody @Valid WeatherQueryDto weatherQueryDto, Errors errors) throws Exception {
+    public ResponseEntity<?> find(@RequestBody @Valid WeatherQueryDto weatherQueryDto, Errors errors) {
         if (weatherValidator.validate(weatherQueryDto, errors)) {
             return ResponseEntity.badRequest().body(errors);
         }

@@ -40,8 +40,7 @@ class WeatherControllerTest extends BaseTest {
                                 "find-weather",
                                 requestFields(
                                         fieldWithPath("baseDate").description("조회일").optional(),
-                                        fieldWithPath("baseTime").description("조회시간").optional(),
-                                        fieldWithPath("localDateTime").ignored()
+                                        fieldWithPath("baseTime").description("조회시간").optional()
                                 )
                         )
                 )

@@ -65,7 +65,7 @@ API 관리 문서 입니다.
 
 직원 데이터를 조회하거나 관리할 때 사용한다.
 
-[[resouces-find-employee]]
+[[resources-find-employee]]
 == 직원 단건 조회
 
 `GET` 요청을 사용하여 직원을 조회한다.
@@ -77,7 +77,7 @@ operation::find-employee[snippets='curl-request,http-response']
 
 `GET` 요청을 사용하여 직원 데이터를 쿼리한다.
 
-operation::query-employee[snippets='curl-request,http-response']
+operation::query-employee[snippets='curl-request,request-parameters,http-response']
 
 [[resources-find-employee-with-department]]
 == 직원/부서 조회
@@ -98,21 +98,21 @@ operation::update-employee-salary[snippets='curl-request,request-fields,http-res
 
 부서 데이터를 조회하거나 관리할 때 사용한다.
 
-[[resouces-find-department]]
+[[resources-find-department]]
 == 부서 조회
 
 `GET` 요청을 사용하여 부서를 조회한다.
 
 operation::find-department[snippets='curl-request,http-response']
 
-[[resouces-find-department-with-manager]]
+[[resources-find-department-with-manager]]
 == 부서/매니저 조회
 
 `GET` 요청을 사용하여 부서/매니저를 조회한다.
 
 operation::find-department-with-manager[snippets='curl-request,http-response']
 
-[[resouces-find-department-all]]
+[[resources-find-department-all]]
 == 부서 목록 조회
 
 `GET` 요청을 사용하여 부서목록을 조회한다.

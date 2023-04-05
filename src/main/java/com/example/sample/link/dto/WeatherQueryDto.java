@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -28,10 +27,6 @@ public class WeatherQueryDto {
     public WeatherQueryDto(LocalDate baseDate, Integer baseTime) {
         this.baseDate = baseDate;
         this.baseTime = baseTime;
-    }
-
-    public LocalDateTime getLocalDateTime() {
-        return LocalDateTime.of(this.baseDate, LocalTime.of(this.baseTime, 0));
     }
 
     public void updateSearchTime() {

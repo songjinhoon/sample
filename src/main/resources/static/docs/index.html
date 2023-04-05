@@ -451,15 +451,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#overview-http-verbs">HTTP 동사</a></li>
 <li><a href="#overview-http-status-codes">HTTP 상태 코드</a></li>
 <li><a href="#resources-employee">Employee</a></li>
-<li><a href="#resouces-find-employee">직원 단건 조회</a>
+<li><a href="#resources-find-employee">직원 단건 조회</a>
 <ul class="sectlevel2">
-<li><a href="#resouces-find-employee_curl_request">Example request</a></li>
-<li><a href="#resouces-find-employee_http_response">Example response</a></li>
+<li><a href="#resources-find-employee_curl_request">Example request</a></li>
+<li><a href="#resources-find-employee_http_response">Example response</a></li>
 </ul>
 </li>
 <li><a href="#resources-query-employee">직원 쿼리</a>
 <ul class="sectlevel2">
 <li><a href="#resources-query-employee_curl_request">Example request</a></li>
+<li><a href="#resources-query-employee_request_parameters">Request parameters</a></li>
 <li><a href="#resources-query-employee_http_response">Example response</a></li>
 </ul>
 </li>
@@ -477,22 +478,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#resources-department">Department</a></li>
-<li><a href="#resouces-find-department">부서 조회</a>
+<li><a href="#resources-find-department">부서 조회</a>
 <ul class="sectlevel2">
-<li><a href="#resouces-find-department_curl_request">Example request</a></li>
-<li><a href="#resouces-find-department_http_response">Example response</a></li>
+<li><a href="#resources-find-department_curl_request">Example request</a></li>
+<li><a href="#resources-find-department_http_response">Example response</a></li>
 </ul>
 </li>
-<li><a href="#resouces-find-department-with-manager">부서/매니저 조회</a>
+<li><a href="#resources-find-department-with-manager">부서/매니저 조회</a>
 <ul class="sectlevel2">
-<li><a href="#resouces-find-department-with-manager_curl_request">Example request</a></li>
-<li><a href="#resouces-find-department-with-manager_http_response">Example response</a></li>
+<li><a href="#resources-find-department-with-manager_curl_request">Example request</a></li>
+<li><a href="#resources-find-department-with-manager_http_response">Example response</a></li>
 </ul>
 </li>
-<li><a href="#resouces-find-department-all">부서 목록 조회</a>
+<li><a href="#resources-find-department-all">부서 목록 조회</a>
 <ul class="sectlevel2">
-<li><a href="#resouces-find-department-all_curl_request">Example request</a></li>
-<li><a href="#resouces-find-department-all_http_response">Example response</a></li>
+<li><a href="#resources-find-department-all_curl_request">Example request</a></li>
+<li><a href="#resources-find-department-all_http_response">Example response</a></li>
 </ul>
 </li>
 <li><a href="#resources-weather">Weather</a></li>
@@ -608,13 +609,13 @@ API 관리 문서 입니다.
 </div>
 </div>
 <div class="sect1">
-<h2 id="resouces-find-employee"><a class="link" href="#resouces-find-employee">직원 단건 조회</a></h2>
+<h2 id="resources-find-employee"><a class="link" href="#resources-find-employee">직원 단건 조회</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>GET</code> 요청을 사용하여 직원을 조회한다.</p>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-employee_curl_request"><a class="link" href="#resouces-find-employee_curl_request">Example request</a></h3>
+<h3 id="resources-find-employee_curl_request"><a class="link" href="#resources-find-employee_curl_request">Example request</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/employee/101' -i -X GET \
@@ -623,7 +624,7 @@ API 관리 문서 입니다.
 </div>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-employee_http_response"><a class="link" href="#resouces-find-employee_http_response">Example response</a></h3>
+<h3 id="resources-find-employee_http_response"><a class="link" href="#resources-find-employee_http_response">Example response</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
@@ -691,6 +692,55 @@ Content-Length: 923
     -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="resources-query-employee_request_parameters"><a class="link" href="#resources-query-employee_request_parameters">Request parameters</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">페이지번호</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">페이지크기</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">정렬</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>firstName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">성</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이름</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">이메일</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>phoneNumber</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">핸드폰번호</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hireDate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">고용일</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="resources-query-employee_http_response"><a class="link" href="#resources-query-employee_http_response">Example response</a></h3>
@@ -827,8 +877,8 @@ Content-Length: 2932
     "sorted" : true,
     "unsorted" : false
   },
-  "first" : false,
   "number" : 1,
+  "first" : false,
   "size" : 5,
   "numberOfElements" : 5,
   "empty" : false
@@ -992,13 +1042,13 @@ Content-Length: 1437
 </div>
 </div>
 <div class="sect1">
-<h2 id="resouces-find-department"><a class="link" href="#resouces-find-department">부서 조회</a></h2>
+<h2 id="resources-find-department"><a class="link" href="#resources-find-department">부서 조회</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>GET</code> 요청을 사용하여 부서를 조회한다.</p>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-department_curl_request"><a class="link" href="#resouces-find-department_curl_request">Example request</a></h3>
+<h3 id="resources-find-department_curl_request"><a class="link" href="#resources-find-department_curl_request">Example request</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/department/10' -i -X GET \
@@ -1007,7 +1057,7 @@ Content-Length: 1437
 </div>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-department_http_response"><a class="link" href="#resouces-find-department_http_response">Example response</a></h3>
+<h3 id="resources-find-department_http_response"><a class="link" href="#resources-find-department_http_response">Example response</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
@@ -1048,13 +1098,13 @@ Content-Length: 625
 </div>
 </div>
 <div class="sect1">
-<h2 id="resouces-find-department-with-manager"><a class="link" href="#resouces-find-department-with-manager">부서/매니저 조회</a></h2>
+<h2 id="resources-find-department-with-manager"><a class="link" href="#resources-find-department-with-manager">부서/매니저 조회</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>GET</code> 요청을 사용하여 부서/매니저를 조회한다.</p>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-department-with-manager_curl_request"><a class="link" href="#resouces-find-department-with-manager_curl_request">Example request</a></h3>
+<h3 id="resources-find-department-with-manager_curl_request"><a class="link" href="#resources-find-department-with-manager_curl_request">Example request</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/department/10/manager' -i -X GET \
@@ -1063,7 +1113,7 @@ Content-Length: 625
 </div>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-department-with-manager_http_response"><a class="link" href="#resouces-find-department-with-manager_http_response">Example response</a></h3>
+<h3 id="resources-find-department-with-manager_http_response"><a class="link" href="#resources-find-department-with-manager_http_response">Example response</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
@@ -1135,13 +1185,13 @@ Content-Length: 1384
 </div>
 </div>
 <div class="sect1">
-<h2 id="resouces-find-department-all"><a class="link" href="#resouces-find-department-all">부서 목록 조회</a></h2>
+<h2 id="resources-find-department-all"><a class="link" href="#resources-find-department-all">부서 목록 조회</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>GET</code> 요청을 사용하여 부서목록을 조회한다.</p>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-department-all_curl_request"><a class="link" href="#resouces-find-department-all_curl_request">Example request</a></h3>
+<h3 id="resources-find-department-all_curl_request"><a class="link" href="#resources-find-department-all_curl_request">Example request</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/department' -i -X GET \
@@ -1150,7 +1200,7 @@ Content-Length: 1384
 </div>
 </div>
 <div class="sect2">
-<h3 id="resouces-find-department-all_http_response"><a class="link" href="#resouces-find-department-all_http_response">Example response</a></h3>
+<h3 id="resources-find-department-all_http_response"><a class="link" href="#resources-find-department-all_http_response">Example response</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
@@ -1698,8 +1748,7 @@ Content-Length: 12007
     -H 'Content-Type: application/json;charset=UTF-8' \
     -d '{
   "baseDate" : "2023-04-05",
-  "baseTime" : 13,
-  "localDateTime" : "2023-04-05T13:00:00"
+  "baseTime" : 14
 }'</code></pre>
 </div>
 </div>
@@ -1743,64 +1792,64 @@ Content-Length: 12007
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1004
+Content-Length: 1006
 
 [ {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "PTY",
   "nx" : 55,
   "ny" : 127,
   "obsrValue" : "0"
 }, {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "REH",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "98"
+  "obsrValue" : "97"
 }, {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "RN1",
   "nx" : 55,
   "ny" : 127,
   "obsrValue" : "0"
 }, {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "T1H",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "11.4"
+  "obsrValue" : "10.8"
 }, {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "UUU",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "0"
+  "obsrValue" : "1.6"
 }, {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "VEC",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "178"
+  "obsrValue" : "214"
 }, {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "VVV",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "2.7"
+  "obsrValue" : "2.4"
 }, {
   "baseDate" : "20230405",
-  "baseTime" : "1300",
+  "baseTime" : "1400",
   "category" : "WSD",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "2.7"
+  "obsrValue" : "2.9"
 } ]</code></pre>
 </div>
 </div>
@@ -1811,7 +1860,7 @@ Content-Length: 1004
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2023-04-04 21:44:54 +0900
+Last updated 2023-04-05 15:04:49 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
