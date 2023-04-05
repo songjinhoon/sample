@@ -810,8 +810,8 @@ Content-Length: 2932
   "pageable" : {
     "sort" : {
       "empty" : false,
-      "unsorted" : false,
-      "sorted" : true
+      "sorted" : true,
+      "unsorted" : false
     },
     "offset" : 5,
     "pageNumber" : 1,
@@ -822,13 +822,13 @@ Content-Length: 2932
   "last" : false,
   "totalPages" : 11,
   "totalElements" : 55,
-  "number" : 1,
-  "first" : false,
   "sort" : {
     "empty" : false,
-    "unsorted" : false,
-    "sorted" : true
+    "sorted" : true,
+    "unsorted" : false
   },
+  "first" : false,
+  "number" : 1,
   "size" : 5,
   "numberOfElements" : 5,
   "empty" : false
@@ -1697,9 +1697,9 @@ Content-Length: 12007
 <pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/weather/short-term-forecast' -i -X GET \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -d '{
-  "baseDate" : "2023-04-04",
-  "baseTime" : 21,
-  "localDateTime" : "2023-04-04T21:00:00"
+  "baseDate" : "2023-04-05",
+  "baseTime" : 13,
+  "localDateTime" : "2023-04-05T13:00:00"
 }'</code></pre>
 </div>
 </div>
@@ -1743,64 +1743,64 @@ Content-Length: 12007
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1007
+Content-Length: 1004
 
 [ {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "PTY",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "1"
+  "obsrValue" : "0"
 }, {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "REH",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "91"
+  "obsrValue" : "98"
 }, {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "RN1",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "2.5"
+  "obsrValue" : "0"
 }, {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "T1H",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "13.3"
+  "obsrValue" : "11.4"
 }, {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "UUU",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "-2"
+  "obsrValue" : "0"
 }, {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "VEC",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "132"
+  "obsrValue" : "178"
 }, {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "VVV",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "1.9"
+  "obsrValue" : "2.7"
 }, {
-  "baseDate" : "20230404",
-  "baseTime" : "2100",
+  "baseDate" : "20230405",
+  "baseTime" : "1300",
   "category" : "WSD",
   "nx" : 55,
   "ny" : 127,
-  "obsrValue" : "2.8"
+  "obsrValue" : "2.7"
 } ]</code></pre>
 </div>
 </div>

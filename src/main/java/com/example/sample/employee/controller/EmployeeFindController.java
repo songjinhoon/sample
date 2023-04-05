@@ -4,7 +4,6 @@ import com.example.sample.department.domain.entity.Department;
 import com.example.sample.department.domain.repository.DepartmentRepository;
 import com.example.sample.employee.domain.entity.Employee;
 import com.example.sample.employee.domain.repository.EmployeeRepository;
-import com.example.sample.employee.query.dao.EmployeeQueryDao;
 import com.example.sample.employee.query.dto.EmployeeQueryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -29,8 +28,6 @@ public class EmployeeFindController {
     private final EmployeeRepository employeeRepository;
 
     private final DepartmentRepository departmentRepository;
-
-    private final EmployeeQueryDao employeeQueryDao;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> find(@PathVariable Long id) {
